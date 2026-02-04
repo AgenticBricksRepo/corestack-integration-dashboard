@@ -1,0 +1,56 @@
+{
+  "total_policies": 8,
+  "total_findings": 8,
+  "total_resources": 4,
+  "compliant": 2,
+  "non_compliant": 6,
+  "total_violations": 7,
+  "compliance_rate": 25,
+  "by_source": {
+    "corestack": {
+      "total": 3,
+      "compliant": 1,
+      "non_compliant": 2
+    },
+    "cloudcustodian": {
+      "total": 5,
+      "compliant": 1,
+      "non_compliant": 4
+    }
+  },
+  "by_severity": {
+    "high": {
+      "total": 5,
+      "compliant": 1,
+      "non_compliant": 4
+    },
+    "medium": {
+      "total": 2,
+      "compliant": 1,
+      "non_compliant": 1
+    },
+    "low": {
+      "total": 1,
+      "compliant": 0,
+      "non_compliant": 1
+    }
+  },
+  "by_category": {
+    "security": {
+      "total": 5,
+      "compliant": 1,
+      "non_compliant": 4
+    },
+    "cost": {
+      "total": 2,
+      "compliant": 1,
+      "non_compliant": 1
+    },
+    "governance": {
+      "total": 1,
+      "compliant": 0,
+      "non_compliant": 1
+    }
+  },
+  "last_updated": "2026-02-03T03:48:03Z"
+}

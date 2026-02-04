@@ -1,0 +1,74 @@
+[
+  {
+    "policy_id": "corestack:iam-mfa-enabled",
+    "name": "IAM MFA Enabled for Console Users",
+    "source": "corestack",
+    "severity": "high",
+    "category": "security",
+    "resource_types": "iam-user",
+    "description": "Ensure all IAM users with console access have MFA enabled."
+  },
+  {
+    "policy_id": "corestack:cost-budget-alert",
+    "name": "Monthly Budget Alert Configured",
+    "source": "corestack",
+    "severity": "medium",
+    "category": "cost",
+    "resource_types": "aws-account",
+    "description": "Verify that AWS Budgets alert is configured for the account."
+  },
+  {
+    "policy_id": "corestack:cloudtrail-enabled",
+    "name": "CloudTrail Logging Enabled",
+    "source": "corestack",
+    "severity": "high",
+    "category": "security",
+    "resource_types": "cloudtrail",
+    "description": "Ensure CloudTrail is enabled in all regions for audit logging."
+  },
+  {
+    "policy_id": "custodian:ebs-encrypted",
+    "name": "EBS Encrypted",
+    "source": "cloudcustodian",
+    "severity": "high",
+    "category": "security",
+    "resource_types": "ebs-volume",
+    "description": "Find EBS volumes that are NOT encrypted"
+  },
+  {
+    "policy_id": "custodian:ebs-unused-volumes",
+    "name": "EBS Unused Volumes",
+    "source": "cloudcustodian",
+    "severity": "low",
+    "category": "cost",
+    "resource_types": "ebs-volume",
+    "description": "Find EBS volumes that are not attached to any instance"
+  },
+  {
+    "policy_id": "custodian:ec2-required-tags",
+    "name": "EC2 Required Tags",
+    "source": "cloudcustodian",
+    "severity": "medium",
+    "category": "governance",
+    "resource_types": "ec2-instance",
+    "description": "EC2 instances must have CostCenter and Environment tags"
+  },
+  {
+    "policy_id": "custodian:s3-default-encryption-enabled",
+    "name": "S3 Default Encryption Enabled",
+    "source": "cloudcustodian",
+    "severity": "high",
+    "category": "security",
+    "resource_types": "s3-bucket",
+    "description": "Verify S3 buckets have default encryption enabled"
+  },
+  {
+    "policy_id": "custodian:s3-public-bucket",
+    "name": "S3 Public Bucket Detection",
+    "source": "cloudcustodian",
+    "severity": "high",
+    "category": "security",
+    "resource_types": "s3-bucket",
+    "description": "Detect S3 buckets with public access via bucket policy"
+  }
+]

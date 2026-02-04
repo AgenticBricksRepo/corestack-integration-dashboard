@@ -1,0 +1,59 @@
+[
+  {
+    "resource_key": "aws:864387741092:us-east-1:ebs-volume:vol-0ad97b39fe3e2a5a0",
+    "policy_id": "custodian:ebs-encrypted",
+    "run_id": "run-1770090475",
+    "raw_id": "vol-0ad97b39fe3e2a5a0",
+    "type": "ebs-volume",
+    "region": "us-east-1",
+    "account_id": "864387741092",
+    "tags": {}
+  },
+  {
+    "resource_key": "aws:864387741092:us-east-1:ebs-volume:vol-0b274ce64fa2f2296",
+    "policy_id": "custodian:ebs-unused-volumes",
+    "run_id": "run-1770090475",
+    "raw_id": "vol-0b274ce64fa2f2296",
+    "type": "ebs-volume",
+    "region": "us-east-1",
+    "account_id": "864387741092",
+    "tags": {
+      "Name": "cscc-poc-1770090351-demo-volume",
+      "Demo": "CoreStackCustodianPOC",
+      "CreatedBy": "claude",
+      "TTLHours": "24",
+      "Owner": "AgenticBricks"
+    }
+  },
+  {
+    "resource_key": "aws:864387741092:us-east-1:ec2-instance:i-097633a6d9b657baf",
+    "policy_id": "custodian:ec2-required-tags",
+    "run_id": "run-1770090475",
+    "raw_id": "i-097633a6d9b657baf",
+    "type": "ec2-instance",
+    "region": "us-east-1",
+    "account_id": "864387741092",
+    "tags": {
+      "Owner": "AgenticBricks",
+      "Demo": "CoreStackCustodianPOC",
+      "TTLHours": "24",
+      "CreatedBy": "claude",
+      "Name": "cscc-poc-1770090351-demo-instance"
+    }
+  },
+  {
+    "resource_key": "aws:864387741092:us-east-1:s3-bucket:cscc-poc-1770090351-public-bucket",
+    "policy_id": "custodian:s3-public-bucket",
+    "run_id": "run-1770090475",
+    "raw_id": "cscc-poc-1770090351-public-bucket",
+    "type": "s3-bucket",
+    "region": "us-east-1",
+    "account_id": "864387741092",
+    "tags": {
+      "Owner": "AgenticBricks",
+      "TTLHours": "24",
+      "CreatedBy": "claude",
+      "Demo": "CoreStackCustodianPOC"
+    }
+  }
+]

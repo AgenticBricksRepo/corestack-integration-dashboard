@@ -1,0 +1,98 @@
+[
+  {
+    "finding_id": 1,
+    "run_id": "corestack-baseline",
+    "policy_id": "corestack:iam-mfa-enabled",
+    "status": "FAIL",
+    "violations_count": 2,
+    "last_evaluated": "2026-02-03T00:00:00Z",
+    "policy_name": "IAM MFA Enabled for Console Users",
+    "source": "corestack",
+    "severity": "high",
+    "category": "security"
+  },
+  {
+    "finding_id": 2,
+    "run_id": "corestack-baseline",
+    "policy_id": "corestack:cost-budget-alert",
+    "status": "PASS",
+    "violations_count": 0,
+    "last_evaluated": "2026-02-03T00:00:00Z",
+    "policy_name": "Monthly Budget Alert Configured",
+    "source": "corestack",
+    "severity": "medium",
+    "category": "cost"
+  },
+  {
+    "finding_id": 3,
+    "run_id": "corestack-baseline",
+    "policy_id": "corestack:cloudtrail-enabled",
+    "status": "FAIL",
+    "violations_count": 1,
+    "last_evaluated": "2026-02-03T00:00:00Z",
+    "policy_name": "CloudTrail Logging Enabled",
+    "source": "corestack",
+    "severity": "high",
+    "category": "security"
+  },
+  {
+    "finding_id": 4,
+    "run_id": "run-1770090475",
+    "policy_id": "custodian:ebs-encrypted",
+    "status": "FAIL",
+    "violations_count": 1,
+    "last_evaluated": "2026-02-03T03:48:03Z",
+    "policy_name": "EBS Encrypted",
+    "source": "cloudcustodian",
+    "severity": "high",
+    "category": "security"
+  },
+  {
+    "finding_id": 5,
+    "run_id": "run-1770090475",
+    "policy_id": "custodian:ebs-unused-volumes",
+    "status": "FAIL",
+    "violations_count": 1,
+    "last_evaluated": "2026-02-03T03:48:03Z",
+    "policy_name": "EBS Unused Volumes",
+    "source": "cloudcustodian",
+    "severity": "low",
+    "category": "cost"
+  },
+  {
+    "finding_id": 6,
+    "run_id": "run-1770090475",
+    "policy_id": "custodian:ec2-required-tags",
+    "status": "FAIL",
+    "violations_count": 1,
+    "last_evaluated": "2026-02-03T03:48:03Z",
+    "policy_name": "EC2 Required Tags",
+    "source": "cloudcustodian",
+    "severity": "medium",
+    "category": "governance"
+  },
+  {
+    "finding_id": 7,
+    "run_id": "run-1770090475",
+    "policy_id": "custodian:s3-default-encryption-enabled",
+    "status": "PASS",
+    "violations_count": 0,
+    "last_evaluated": "2026-02-03T03:48:03Z",
+    "policy_name": "S3 Default Encryption Enabled",
+    "source": "cloudcustodian",
+    "severity": "high",
+    "category": "security"
+  },
+  {
+    "finding_id": 8,
+    "run_id": "run-1770090475",
+    "policy_id": "custodian:s3-public-bucket",
+    "status": "FAIL",
+    "violations_count": 1,
+    "last_evaluated": "2026-02-03T03:48:03Z",
+    "policy_name": "S3 Public Bucket Detection",
+    "source": "cloudcustodian",
+    "severity": "high",
+    "category": "security"
+  }
+]
