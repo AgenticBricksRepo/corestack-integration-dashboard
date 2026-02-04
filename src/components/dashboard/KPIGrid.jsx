@@ -6,7 +6,8 @@ import {
   XCircle,
   FileText,
   Cloud,
-  Building2
+  Building2,
+  AlertOctagon
 } from 'lucide-react';
 import { KPICard } from './KPICard';
 import { formatPercentage } from '../../utils/formatters';
@@ -19,6 +20,7 @@ export const KPIGrid = ({ findings }) => {
     const violations = findings.reduce((sum, f) => sum + f.violations_count, 0);
     const cloudCustodian = findings.filter(f => f.source === 'cloudcustodian').length;
     const corestack = findings.filter(f => f.source === 'corestack').length;
+    const highSeverity = findings.filter(f => f.severity === 'high' && f.status === 'FAIL').length;
     const complianceRate = total > 0 ? (compliant / total) * 100 : 0;
 
     return {
@@ -28,15 +30,19 @@ export const KPIGrid = ({ findings }) => {
       violations,
       cloudCustodian,
       corestack,
+      highSeverity,
       complianceRate,
     };
   }, [findings]);
 
+  // Arranged in meaningful pairs:
+  // Row 1: Policy sources (Total, Custodian, CoreStack, High Severity)
+  // Row 2: Compliance status (Compliant, Non-Compliant, Rate, Violations)
   const kpis = [
     {
       title: 'Total Policies',
       value: stats.total,
-      subtitle: 'Active governance rules',
+      subtitle: 'Governance rules',
       icon: FileText,
       color: 'blue',
     },
@@ -55,37 +61,44 @@ export const KPIGrid = ({ findings }) => {
       color: 'blue',
     },
     {
+      title: 'High Severity',
+      value: stats.highSeverity,
+      subtitle: 'Critical failures',
+      icon: AlertOctagon,
+      color: stats.highSeverity > 0 ? 'red' : 'green',
+    },
+    {
       title: 'Compliant',
       value: stats.compliant,
-      subtitle: 'Policies passing',
+      subtitle: 'Passing',
       icon: CheckCircle,
       color: 'green',
     },
     {
       title: 'Non-Compliant',
       value: stats.nonCompliant,
-      subtitle: 'Policies failing',
+      subtitle: 'Failing',
       icon: XCircle,
       color: 'red',
     },
     {
       title: 'Compliance Rate',
       value: formatPercentage(stats.complianceRate),
-      subtitle: `${stats.compliant} of ${stats.total} passing`,
+      subtitle: `${stats.compliant}/${stats.total}`,
       icon: Shield,
       color: stats.complianceRate >= 80 ? 'green' : stats.complianceRate >= 50 ? 'yellow' : 'red',
     },
     {
-      title: 'Total Violations',
+      title: 'Violations',
       value: stats.violations,
-      subtitle: 'Resources in violation',
+      subtitle: 'Resources affected',
       icon: AlertTriangle,
       color: stats.violations > 0 ? 'yellow' : 'green',
     },
   ];
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
       {kpis.map((kpi, index) => (
         <KPICard key={index} {...kpi} />
       ))}
