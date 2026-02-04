@@ -35,9 +35,11 @@ export const KPIGrid = ({ findings }) => {
     };
   }, [findings]);
 
-  // Arranged in meaningful pairs:
-  // Row 1: Policy sources (Total, Custodian, CoreStack, High Severity)
-  // Row 2: Compliance status (Compliant, Non-Compliant, Rate, Violations)
+  // Arranged for meaningful mobile pairs (2 cols):
+  // Pair 1: Total Policies | High Severity (overview)
+  // Pair 2: Cloud Custodian | CoreStack (sources)
+  // Pair 3: Compliant | Non-Compliant (status)
+  // Pair 4: Compliance Rate | Violations (metrics)
   const kpis = [
     {
       title: 'Total Policies',
@@ -45,6 +47,13 @@ export const KPIGrid = ({ findings }) => {
       subtitle: 'Governance rules',
       icon: FileText,
       color: 'blue',
+    },
+    {
+      title: 'High Severity',
+      value: stats.highSeverity,
+      subtitle: 'Critical failures',
+      icon: AlertOctagon,
+      color: stats.highSeverity > 0 ? 'red' : 'green',
     },
     {
       title: 'Cloud Custodian',
@@ -59,13 +68,6 @@ export const KPIGrid = ({ findings }) => {
       subtitle: 'Native policies',
       icon: Building2,
       color: 'blue',
-    },
-    {
-      title: 'High Severity',
-      value: stats.highSeverity,
-      subtitle: 'Critical failures',
-      icon: AlertOctagon,
-      color: stats.highSeverity > 0 ? 'red' : 'green',
     },
     {
       title: 'Compliant',
